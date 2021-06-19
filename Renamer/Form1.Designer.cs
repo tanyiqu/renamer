@@ -58,6 +58,30 @@
             "51",
             "516",
             "15",
+            "15",
+            "1",
+            "2",
+            "31",
+            "4",
+            "5",
+            "51",
+            "51",
+            "561",
+            "51",
+            "516",
+            "15",
+            "15",
+            "1",
+            "2",
+            "31",
+            "4",
+            "5",
+            "51",
+            "51",
+            "561",
+            "51",
+            "516",
+            "15",
             "15"});
             this.originList.Location = new System.Drawing.Point(0, 0);
             this.originList.Name = "originList";
@@ -101,6 +125,30 @@
             "51",
             "516",
             "15",
+            "15",
+            "1",
+            "2",
+            "31",
+            "4",
+            "5",
+            "51",
+            "51",
+            "561",
+            "51",
+            "516",
+            "15",
+            "15",
+            "1",
+            "2",
+            "31",
+            "4",
+            "5",
+            "51",
+            "51",
+            "561",
+            "51",
+            "516",
+            "15",
             "15"});
             this.newList.Location = new System.Drawing.Point(196, 0);
             this.newList.Name = "newList";
@@ -123,6 +171,7 @@
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(230, 21);
             this.txtPath.TabIndex = 3;
+            this.txtPath.Click += new System.EventHandler(this.txtPath_Click);
             this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
             // 
             // label1

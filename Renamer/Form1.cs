@@ -41,11 +41,9 @@ namespace Renamer
             Console.WriteLine("点击 还原");
         }
 
-        // 点击选择文件夹
-        private void btnSelectDir_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("点击 选择文件夹");
 
+        private void selectDir()
+        {
             // 浏览文件夹
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             dialog.Description = "请选择文件路径";
@@ -55,6 +53,18 @@ namespace Renamer
             }
         }
 
+        // 点击选择文件夹
+        private void btnSelectDir_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("点击 选择文件夹");
+            this.selectDir();
+        }
+
+        private void txtPath_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("点击 选择文件夹");
+            this.selectDir();
+        }
 
         // 目录变动回调
         private void txtPath_TextChanged(object sender, EventArgs e)
@@ -65,8 +75,9 @@ namespace Renamer
             if (Util.dirExist(txtPath.Text))
             {
                 currPath = txtPath.Text;
-                
-                Util.setItems(ref originList, Util.getFiles(currPath));    
+                currFiles =  Util.getFiles(currPath);
+                Util.setItems(ref originList,currFiles);
+                Util.setItems(ref newList, Option.addSequence(currFiles,0,""," "));
             }
             else
             {
@@ -94,6 +105,7 @@ namespace Renamer
             string path = ((System.Array)e.Data.GetData(DataFormats.FileDrop)).GetValue(0).ToString();
             txtPath.Text = path;
         }
+
 
 
     }
