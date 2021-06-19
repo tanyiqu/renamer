@@ -7,11 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Renamer
 {
     public partial class Form1 : Form
     {
+
+        // 当前选择的路径
+        private string currPath = "";
+
+        // 当前路径的文件列表
+        private List<string> currFiles = new List<string>();
+
+
         public Form1()
         {
             InitializeComponent();
@@ -20,6 +29,11 @@ namespace Renamer
         private void btnStart_Click(object sender, EventArgs e)
         {
             Console.WriteLine("点击 执行");
+
+//            Util.setItems(ref originList, currFiles);
+
+         //   Util.setItems(ref newList, this.currFiles);
+
         }
 
         private void btnRestore_Click(object sender, EventArgs e)
@@ -27,6 +41,7 @@ namespace Renamer
             Console.WriteLine("点击 还原");
         }
 
+        // 点击选择文件夹
         private void btnSelectDir_Click(object sender, EventArgs e)
         {
             Console.WriteLine("点击 选择文件夹");
@@ -40,9 +55,27 @@ namespace Renamer
             }
         }
 
+
+        // 目录变动回调
         private void txtPath_TextChanged(object sender, EventArgs e)
         {
             Console.WriteLine("文本改变 " + txtPath.Text);
+
+            // 文件夹存在
+            if (Util.dirExist(txtPath.Text))
+            {
+                currPath = txtPath.Text;
+                
+                Util.setItems(ref originList, Util.getFiles(currPath));    
+            }
+            else
+            {
+                originList.Items.Clear();
+                originList.Items.Add("请选择正确的路径！");
+                newList.Items.Clear();
+                newList.Items.Add("请选择正确的路径！");
+            }
+
         }
 
 

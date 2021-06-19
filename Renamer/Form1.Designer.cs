@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.originList = new System.Windows.Forms.ListBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnRestore = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.newList = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,12 +41,12 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listBox1
+            // originList
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Items.AddRange(new object[] {
+            this.originList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.originList.FormattingEnabled = true;
+            this.originList.ItemHeight = 12;
+            this.originList.Items.AddRange(new object[] {
             "1",
             "2",
             "31",
@@ -59,10 +59,10 @@
             "516",
             "15",
             "15"});
-            this.listBox1.Location = new System.Drawing.Point(0, 0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(188, 284);
-            this.listBox1.TabIndex = 0;
+            this.originList.Location = new System.Drawing.Point(0, 0);
+            this.originList.Name = "originList";
+            this.originList.Size = new System.Drawing.Size(188, 284);
+            this.originList.TabIndex = 0;
             // 
             // btnStart
             // 
@@ -84,13 +84,12 @@
             this.btnRestore.UseVisualStyleBackColor = true;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
-            // listBox2
+            // newList
             // 
-            this.listBox2.ColumnWidth = 10;
-            this.listBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 12;
-            this.listBox2.Items.AddRange(new object[] {
+            this.newList.Dock = System.Windows.Forms.DockStyle.Right;
+            this.newList.FormattingEnabled = true;
+            this.newList.ItemHeight = 12;
+            this.newList.Items.AddRange(new object[] {
             "1",
             "2",
             "31",
@@ -103,16 +102,16 @@
             "516",
             "15",
             "15"});
-            this.listBox2.Location = new System.Drawing.Point(196, 0);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(188, 284);
-            this.listBox2.TabIndex = 0;
+            this.newList.Location = new System.Drawing.Point(196, 0);
+            this.newList.Name = "newList";
+            this.newList.Size = new System.Drawing.Size(188, 284);
+            this.newList.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.listBox1);
-            this.panel1.Controls.Add(this.listBox2);
+            this.panel1.Controls.Add(this.originList);
+            this.panel1.Controls.Add(this.newList);
             this.panel1.Location = new System.Drawing.Point(12, 233);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(384, 284);
@@ -138,7 +137,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(207, 218);
+            this.label2.Location = new System.Drawing.Point(210, 217);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 12);
             this.label2.TabIndex = 5;
@@ -147,7 +146,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 218);
+            this.label3.Location = new System.Drawing.Point(13, 217);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 5;
@@ -189,10 +188,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox originList;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnRestore;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox newList;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Label label1;
