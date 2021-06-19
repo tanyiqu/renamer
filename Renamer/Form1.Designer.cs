@@ -33,7 +33,7 @@
             this.btnRestore = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -118,12 +118,13 @@
             this.panel1.Size = new System.Drawing.Size(384, 284);
             this.panel1.TabIndex = 2;
             // 
-            // textBox1
+            // txtPath
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 21);
-            this.textBox1.TabIndex = 3;
+            this.txtPath.Location = new System.Drawing.Point(85, 8);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size(230, 21);
+            this.txtPath.TabIndex = 3;
+            this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
             // 
             // label1
             // 
@@ -164,6 +165,7 @@
             // 
             // Form1
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 564);
@@ -171,12 +173,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPath);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.btnStart);
             this.Name = "Form1";
             this.Text = "Renamer";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -190,7 +194,7 @@
         private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
