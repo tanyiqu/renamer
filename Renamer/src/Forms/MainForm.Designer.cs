@@ -1,6 +1,6 @@
 ﻿namespace Renamer
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -41,6 +41,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
+            // checkNoExt
+            // 
+            checkNoExt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            checkNoExt.AutoSize = true;
+            checkNoExt.Checked = true;
+            checkNoExt.CheckState = System.Windows.Forms.CheckState.Checked;
+            checkNoExt.Location = new System.Drawing.Point(275, 205);
+            checkNoExt.Name = "checkNoExt";
+            checkNoExt.Size = new System.Drawing.Size(125, 25);
+            checkNoExt.TabIndex = 8;
+            checkNoExt.Text = "不显示扩展名";
+            checkNoExt.UseVisualStyleBackColor = true;
+            // 
             // btnStart
             // 
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -67,9 +80,9 @@
             // 
             this.txtPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPath.Location = new System.Drawing.Point(85, 8);
+            this.txtPath.Location = new System.Drawing.Point(85, 35);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(230, 21);
+            this.txtPath.Size = new System.Drawing.Size(230, 29);
             this.txtPath.TabIndex = 3;
             this.txtPath.Click += new System.EventHandler(this.txtPath_Click);
             this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
@@ -77,16 +90,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 12);
+            this.label1.Location = new System.Drawing.Point(7, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 12);
+            this.label1.Size = new System.Drawing.Size(106, 21);
             this.label1.TabIndex = 4;
             this.label1.Text = "选择文件夹：";
             // 
             // btnSelectDir
             // 
             this.btnSelectDir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSelectDir.Location = new System.Drawing.Point(321, 7);
+            this.btnSelectDir.Location = new System.Drawing.Point(321, 35);
             this.btnSelectDir.Name = "btnSelectDir";
             this.btnSelectDir.Size = new System.Drawing.Size(75, 23);
             this.btnSelectDir.TabIndex = 6;
@@ -126,23 +139,10 @@
             this.listNew.Name = "listNew";
             this.listNew.ReadOnly = true;
             // 
-            // checkNoExt
-            // 
-            checkNoExt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            checkNoExt.AutoSize = true;
-            checkNoExt.Checked = true;
-            checkNoExt.CheckState = System.Windows.Forms.CheckState.Checked;
-            checkNoExt.Location = new System.Drawing.Point(304, 214);
-            checkNoExt.Name = "checkNoExt";
-            checkNoExt.Size = new System.Drawing.Size(96, 16);
-            checkNoExt.TabIndex = 8;
-            checkNoExt.Text = "不显示扩展名";
-            checkNoExt.UseVisualStyleBackColor = true;
-            // 
-            // Form1
+            // MainForm
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(402, 564);
             this.Controls.Add(checkNoExt);
@@ -152,8 +152,11 @@
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.btnStart);
-            this.Name = "Form1";
+            this.Name = "MainForm";
+            this.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
+            this.Style = Sunny.UI.UIStyle.Gray;
             this.Text = "Renamer";
+            this.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

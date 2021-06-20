@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Sunny.UI;
 
 namespace Renamer
 {
-    public partial class Form1 : Form
+    public partial class MainForm : UIForm
     {
 
         // 当前选择的路径
@@ -27,7 +28,7 @@ namespace Renamer
         private bool showExt = false;
 
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
