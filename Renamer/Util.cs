@@ -30,11 +30,13 @@ namespace Renamer
             {
                 FileItem fi = new FileItem();
                 fi.name = fileinfo.Name;
-                fi.nameWithoutExt = fileinfo.Name;
+                fi.ext = getExt(fileinfo.Name);
+                fi.nameWithoutExt = getNameWithoutExt(fi.name, fi.ext);
 
                 fi.fullname = fileinfo.FullName;
-                fi.parentPath = fileinfo.FullName;
-                fi.newName = fileinfo.Name;
+                fi.parentPath = fileinfo.DirectoryName;
+
+                fi.newName = fi.name;
 
                 fs.Add(fi);
             }
@@ -84,6 +86,34 @@ namespace Renamer
             }
         }
 
+
+        // 获取文件的扩展名
+        public static string getExt(string name) 
+        {
+            int pos = name.LastIndexOf(".");
+
+            if (pos == 0)
+            {
+                return "";
+            }
+            else if (pos == -1)
+            {
+                return "";
+            }
+            return name.Substring(pos+1);
+        }
+
+
+        // 获取不带扩展名的文件名
+        public static string getNameWithoutExt(string name, string ext)
+        {
+            if ("".Equals(ext))
+            {
+                return name;
+            }
+            // 获取扩展名
+            return name.Substring(0,name.Length - ext.Length - 1);
+        }
 
 
     }
