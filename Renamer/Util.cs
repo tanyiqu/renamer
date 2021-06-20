@@ -36,7 +36,7 @@ namespace Renamer
                 fi.fullname = fileinfo.FullName;
                 fi.parentPath = fileinfo.DirectoryName;
 
-                fi.newName = fi.name;
+                fi.newName = "0" + fi.name;
 
                 fs.Add(fi);
             }

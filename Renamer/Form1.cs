@@ -36,10 +36,16 @@ namespace Renamer
         {
             Console.WriteLine("点击 执行");
 
-//            Util.setItems(ref originList, currFiles);
+            if ((int)MessageBox.Show("确定执行？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) != 1)
+            {
+                return; 
+            }
 
-         //   Util.setItems(ref newList, this.currFiles);
-
+            foreach (FileItem fi in this.currFileItems)
+            {
+                fi.rename();
+            }
+            MessageBox.Show("执行成功", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnRestore_Click(object sender, EventArgs e)

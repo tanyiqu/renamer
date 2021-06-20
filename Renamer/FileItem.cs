@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Renamer
@@ -26,11 +27,16 @@ namespace Renamer
         // 文件命名后的名字
         public string newName = "";
 
+        // 文件命名后的名字 不带扩展名
+        public string newNameWithoutExt = "";
 
 
         public void rename()
         {
-            Console.WriteLine("重命名 " + name + " --> " + newName);
+            // Console.WriteLine("重命名 " + name + " --> " + newName);
+
+            FileInfo fi = new FileInfo(this.fullname);
+            fi.MoveTo(this.parentPath + "/" + this.newName);
         }
     }
 }
