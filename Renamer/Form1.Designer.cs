@@ -28,69 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.originList = new System.Windows.Forms.ListBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnRestore = new System.Windows.Forms.Button();
-            this.newList = new System.Windows.Forms.ListBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnSelectDir = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.listOrigin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listNew = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // originList
-            // 
-            this.originList.Dock = System.Windows.Forms.DockStyle.Left;
-            this.originList.FormattingEnabled = true;
-            this.originList.ItemHeight = 12;
-            this.originList.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "31",
-            "4",
-            "5",
-            "51",
-            "51",
-            "561",
-            "51",
-            "516",
-            "15",
-            "15",
-            "1",
-            "2",
-            "31",
-            "4",
-            "5",
-            "51",
-            "51",
-            "561",
-            "51",
-            "516",
-            "15",
-            "15",
-            "1",
-            "2",
-            "31",
-            "4",
-            "5",
-            "51",
-            "51",
-            "561",
-            "51",
-            "516",
-            "15",
-            "15"});
-            this.originList.Location = new System.Drawing.Point(0, 0);
-            this.originList.Name = "originList";
-            this.originList.Size = new System.Drawing.Size(188, 284);
-            this.originList.TabIndex = 0;
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(321, 529);
+            this.btnStart.Location = new System.Drawing.Point(321, 531);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
             this.btnStart.TabIndex = 1;
@@ -100,70 +51,13 @@
             // 
             // btnRestore
             // 
-            this.btnRestore.Location = new System.Drawing.Point(240, 529);
+            this.btnRestore.Location = new System.Drawing.Point(240, 531);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(75, 23);
             this.btnRestore.TabIndex = 1;
             this.btnRestore.Text = "还原";
             this.btnRestore.UseVisualStyleBackColor = true;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
-            // 
-            // newList
-            // 
-            this.newList.Dock = System.Windows.Forms.DockStyle.Right;
-            this.newList.FormattingEnabled = true;
-            this.newList.ItemHeight = 12;
-            this.newList.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "31",
-            "4",
-            "5",
-            "51",
-            "51",
-            "561",
-            "51",
-            "516",
-            "15",
-            "15",
-            "1",
-            "2",
-            "31",
-            "4",
-            "5",
-            "51",
-            "51",
-            "561",
-            "51",
-            "516",
-            "15",
-            "15",
-            "1",
-            "2",
-            "31",
-            "4",
-            "5",
-            "51",
-            "51",
-            "561",
-            "51",
-            "516",
-            "15",
-            "15"});
-            this.newList.Location = new System.Drawing.Point(196, 0);
-            this.newList.Name = "newList";
-            this.newList.Size = new System.Drawing.Size(188, 284);
-            this.newList.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.originList);
-            this.panel1.Controls.Add(this.newList);
-            this.panel1.Location = new System.Drawing.Point(12, 233);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(384, 284);
-            this.panel1.TabIndex = 2;
             // 
             // txtPath
             // 
@@ -177,29 +71,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 12);
+            this.label1.Location = new System.Drawing.Point(7, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 12);
             this.label1.TabIndex = 4;
             this.label1.Text = "选择文件夹：";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(210, 217);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 12);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "重命名后目录";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 217);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "原目录";
             // 
             // btnSelectDir
             // 
@@ -211,25 +87,54 @@
             this.btnSelectDir.UseVisualStyleBackColor = true;
             this.btnSelectDir.Click += new System.EventHandler(this.btnSelectDir_Click);
             // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.listOrigin,
+            this.listNew});
+            this.dataGridView.Location = new System.Drawing.Point(7, 236);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.RowTemplate.Height = 23;
+            this.dataGridView.Size = new System.Drawing.Size(389, 287);
+            this.dataGridView.TabIndex = 7;
+            // 
+            // listOrigin
+            // 
+            this.listOrigin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.listOrigin.HeaderText = "原目录";
+            this.listOrigin.Name = "listOrigin";
+            this.listOrigin.ReadOnly = true;
+            // 
+            // listNew
+            // 
+            this.listNew.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.listNew.HeaderText = "重命名后目录";
+            this.listNew.Name = "listNew";
+            this.listNew.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 564);
+            this.ClientSize = new System.Drawing.Size(402, 564);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnSelectDir);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPath);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.btnStart);
             this.Name = "Form1";
             this.Text = "Renamer";
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
-            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,16 +142,14 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox originList;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnRestore;
-        private System.Windows.Forms.ListBox newList;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSelectDir;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn listOrigin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn listNew;
     }
 }
 

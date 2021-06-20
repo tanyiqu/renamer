@@ -76,15 +76,16 @@ namespace Renamer
             {
                 currPath = txtPath.Text;
                 currFiles =  Util.getFiles(currPath);
-                Util.setItems(ref originList,currFiles);
-                Util.setItems(ref newList, Option.addSequence(currFiles,0,""," "));
+
+                // 刷新表格
+                Util.setData(ref dataGridView, currFiles, Option.addSequence(currFiles, 0, "", " "));
             }
+            // 文件夹不存在，提示信息
             else
             {
-                originList.Items.Clear();
-                originList.Items.Add("请选择正确的路径！");
-                newList.Items.Clear();
-                newList.Items.Add("请选择正确的路径！");
+                List<string> l =  new List<string>();
+                l.Add("请选择正确的路径！");
+                Util.setData(ref dataGridView,l,l);
             }
 
         }

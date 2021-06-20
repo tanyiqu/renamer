@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Renamer
 {
@@ -45,5 +46,29 @@ namespace Renamer
                 listBox.Items.Add(item);
             }
         }
+
+
+        // 设置数据
+        public static void setData(ref System.Windows.Forms.DataGridView dataGridView, List<string> col1, List<string> col2)
+        {
+            // 先清空原来的数据
+            while (dataGridView.Rows.Count != 0)
+            {
+                dataGridView.Rows.RemoveAt(0);
+            }
+
+            // 依次添加数据
+            for (int i = 0; i < col1.ToArray().Length; i++)
+            {
+                DataGridViewRow newRow = new DataGridViewRow();
+                newRow.CreateCells(dataGridView);
+                newRow.Cells[0].Value = col1[i];
+                newRow.Cells[1].Value = col2[i];
+                dataGridView.Rows.Add(newRow);
+            }
+        }
+
+
+
     }
 }
