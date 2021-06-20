@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.CheckBox checkNoExt;
             this.btnStart = new System.Windows.Forms.Button();
             this.btnRestore = new System.Windows.Forms.Button();
             this.txtPath = new System.Windows.Forms.TextBox();
@@ -36,11 +37,13 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.listOrigin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listNew = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            checkNoExt = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // btnStart
             // 
+            this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStart.Location = new System.Drawing.Point(321, 531);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
@@ -51,6 +54,7 @@
             // 
             // btnRestore
             // 
+            this.btnRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestore.Location = new System.Drawing.Point(240, 531);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(75, 23);
@@ -61,6 +65,8 @@
             // 
             // txtPath
             // 
+            this.txtPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPath.Location = new System.Drawing.Point(85, 8);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(230, 21);
@@ -79,6 +85,7 @@
             // 
             // btnSelectDir
             // 
+            this.btnSelectDir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelectDir.Location = new System.Drawing.Point(321, 7);
             this.btnSelectDir.Name = "btnSelectDir";
             this.btnSelectDir.Size = new System.Drawing.Size(75, 23);
@@ -90,7 +97,8 @@
             // dataGridView
             // 
             this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -118,12 +126,26 @@
             this.listNew.Name = "listNew";
             this.listNew.ReadOnly = true;
             // 
+            // checkNoExt
+            // 
+            checkNoExt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            checkNoExt.AutoSize = true;
+            checkNoExt.Checked = true;
+            checkNoExt.CheckState = System.Windows.Forms.CheckState.Checked;
+            checkNoExt.Location = new System.Drawing.Point(304, 214);
+            checkNoExt.Name = "checkNoExt";
+            checkNoExt.Size = new System.Drawing.Size(96, 16);
+            checkNoExt.TabIndex = 8;
+            checkNoExt.Text = "不显示扩展名";
+            checkNoExt.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(402, 564);
+            this.Controls.Add(checkNoExt);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnSelectDir);
             this.Controls.Add(this.label1);

@@ -20,6 +20,12 @@ namespace Renamer
         // 当前路径的文件列表
         private List<string> currFiles = new List<string>();
 
+        private List<FileItem> currFileItems = new List<FileItem>();
+
+
+        // 默认不显示扩展名
+        private bool showExt = false;
+
 
         public Form1()
         {
@@ -75,10 +81,12 @@ namespace Renamer
             if (Util.dirExist(txtPath.Text))
             {
                 currPath = txtPath.Text;
-                currFiles =  Util.getFiles(currPath);
 
+                currFileItems = Util.getFiles(currPath);
+                
                 // 刷新表格
-                Util.setData(ref dataGridView, currFiles, Option.addSequence(currFiles, 0, "", " "));
+                Util.setData(ref dataGridView, currFileItems); 
+
             }
             // 文件夹不存在，提示信息
             else

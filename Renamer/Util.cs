@@ -19,31 +19,47 @@ namespace Renamer
 
 
         // 获取目录所有文件名
-        public static List<string> getFiles(string path) 
+        public static List<FileItem> getFiles(string path) 
         {
             DirectoryInfo root = new DirectoryInfo(path);
             FileInfo[] files = root.GetFiles();
 
-            List<string> fs = new List<string>();
+            // 依次获取文件内容
+            List<FileItem> fs = new List<FileItem>();
             foreach (FileInfo fileinfo in files)
             {
-                fs.Add(fileinfo.Name);
+                FileItem fi = new FileItem();
+                fi.name = fileinfo.Name;
+                fi.nameWithoutExt = fileinfo.Name;
+
+                fi.fullname = fileinfo.FullName;
+                fi.parentPath = fileinfo.FullName;
+                fi.newName = fileinfo.Name;
+
+                fs.Add(fi);
             }
 
             return fs;
         }
 
 
-        // 给ListBox更换Items
-        public static void setItems(ref System.Windows.Forms.ListBox listBox, List<string> items)
+        // 设置数据
+        public static void setData(ref System.Windows.Forms.DataGridView dataGridView, List<FileItem> fileItems)
         {
-            // 清除原items
-            listBox.Items.Clear();
-
-            // 依次添加
-            foreach (string item in items)
+            // 先清空原来的数据
+            while (dataGridView.Rows.Count != 0)
             {
-                listBox.Items.Add(item);
+                dataGridView.Rows.RemoveAt(0);
+            }
+
+            // 依次添加数据
+            foreach (FileItem f in fileItems)
+            {
+                DataGridViewRow newRow = new DataGridViewRow();
+                newRow.CreateCells(dataGridView);
+                newRow.Cells[0].Value = f.name;
+                newRow.Cells[1].Value = f.newName;
+                dataGridView.Rows.Add(newRow);
             }
         }
 
